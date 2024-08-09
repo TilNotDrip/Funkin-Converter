@@ -1,0 +1,6 @@
+.haxelib/
+.vscode/*
+
+!.vscode/settings.json
+
+build/
