@@ -1,6 +1,8 @@
 package;
 
 import haxe.ui.HaxeUIApp;
+import haxe.ui.Toolkit;
+import haxe.ui.focus.FocusManager;
 
 class Main
 {
@@ -12,10 +14,7 @@ class Main
 	static function initialize():Void
 	{
 		initHaxeUI();
-	}
 
-	static function initHaxeUI():Void
-	{
 		var app:HaxeUIApp = new HaxeUIApp();
 
 		app.ready(function()
@@ -24,5 +23,12 @@ class Main
 
 			app.start();
 		});
+	}
+
+	static function initHaxeUI():Void
+	{
+		Toolkit.init();
+		Toolkit.theme = 'dark'; // Don't be cringe.
+		FocusManager.instance.autoFocus = false;
 	}
 }
