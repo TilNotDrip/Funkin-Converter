@@ -15,8 +15,6 @@ class DiscordRPC
 {
 	/**
 	 * The current Discord application ID that's being used right now.
-	 *
-	 * This is only a thing due to the fact that it switches back and forth between ID's.
 	 */
 	inline static final applicationId:String = '1271369174844837939';
 
