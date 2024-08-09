@@ -1,31 +1,45 @@
 package;
 
-import haxe.ui.HaxeUIApp;
+#if FUNKIN_DISCORD_RPC
+import funkin.api.DiscordRPC;
+#end
+import funkin.pages.WelcomePage;
 import haxe.ui.Toolkit;
 import haxe.ui.focus.FocusManager;
+import openfl.Assets;
+import openfl.display.Bitmap;
+import openfl.display.Sprite;
 
-class Main
+class Main extends Sprite
 {
-	public static function main()
+	public function new()
 	{
+		super();
+
 		initialize();
 	}
 
-	static function initialize():Void
+	function initialize():Void
 	{
 		initHaxeUI();
+		initApp();
 
-		var app:HaxeUIApp = new HaxeUIApp();
-
-		app.ready(function()
-		{
-			app.addComponent(new MainView());
-
-			app.start();
-		});
+		#if FUNKIN_DISCORD_RPC
+		DiscordRPC.initialize();
+		#end
 	}
 
-	static function initHaxeUI():Void
+	function initApp():Void
+	{
+		var bg:Bitmap = new Bitmap(Assets.getBitmapData('assets/images/background.png'));
+		bg.x = (stage.stageWidth - bg.width) / 2;
+		bg.y = (stage.stageHeight - bg.height) / 2;
+		addChild(bg);
+
+		addChild(new WelcomePage());
+	}
+
+	function initHaxeUI():Void
 	{
 		Toolkit.init();
 		Toolkit.theme = 'dark'; // Don't be cringe.

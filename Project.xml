@@ -3,18 +3,25 @@
     <meta title="Funkin Converter" package="Funkin Converter" version="0.1.0" company="TilNotDrip" />
     <app main="Main" file="FunkinConverter" path="build/funkinconverter" />
 
-    <window background="#000000" fps="60" />
-    <window width="800" height="600" if="desktop" />
+    <window background="#000000" fps="60" resizable="false" />
+    <window width="1280" height="720" if="desktop" />
     <window width="0" height="0" if="html5" />
 
     <!-- Assets / Paths -->
 
+    <assets path="assets" embed="true" />
     <source path="src" />
 
-    <!-- Haxelibs -->
+    <!-- Funkin Converter Defines -->
+    <define name="FUNKIN_DISCORD_RPC" if="desktop cpp" />
 
+    <!-- Haxelibs -->
     <haxelib name="actuate" />
     <haxelib name="haxeui-core" />
     <haxelib name="haxeui-openfl" />
+    <haxelib name="hxdiscord_rpc" if="FUNKIN_DISCORD_RPC" />
     <haxelib name="openfl" />
+
+    <!-- Haxedefs-->
+    <haxedef name="DISCORD_DISABLE_IO_THREAD" if="hxdiscord_rpc" />
 </project>
