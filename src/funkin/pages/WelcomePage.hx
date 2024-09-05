@@ -24,6 +24,6 @@ class WelcomePage extends Page
 	function buildMenuBar():Void
 	{
 		menuBar = new MenuBar();
-		addChild(menuBar);
+		addComponent(menuBar);
 	}
 }

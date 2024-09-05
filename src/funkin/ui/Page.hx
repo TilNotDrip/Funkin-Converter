@@ -1,6 +1,9 @@
 package funkin.ui;
 
-class Page extends Sprite
+import haxe.ui.containers.Box;
+
+@:build(haxe.ui.ComponentBuilder.build("assets/ui/main-view.xml"))
+class Page extends Box
 {
 	public function new()
 	{

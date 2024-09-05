@@ -28,6 +28,16 @@ class PathLocation
 	}
 
 	/**
+	 * Returns a font path.
+	 * @param key The font file.
+	 * @return default:assets/fonts/{key}
+	 */
+	public function font(key:String):String
+	{
+		return get('fonts/' + key);
+	}
+
+	/**
 	 * Returns a music path.
 	 * @param key The music name.
 	 * @return default:assets/music/{key}.{Constants.EXT_AUDIO}
