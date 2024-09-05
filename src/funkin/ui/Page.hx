@@ -1,7 +1,5 @@
 package funkin.ui;
 
-import openfl.Lib;
-
 class Page extends Sprite
 {
 	public function new()
@@ -10,13 +8,11 @@ class Page extends Sprite
 	}
 
 	/**
-	 * Adds a page and removes this one.
-	 * @param page The new page to switch to.
+	 * Switches this page with another one.
+	 * @param nextPage The next page to go to.
 	 */
-	public function switchPage(page:Page):Void
+	public function switchPage(nextPage:Page):Void
 	{
-		removeChildren();
-		Lib.current.removeChild(this);
-		Lib.current.addChild(page);
+		Main.instance.curPage = nextPage;
 	}
 }

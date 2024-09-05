@@ -2,12 +2,7 @@ package funkin.pages;
 
 import funkin.ui.MenuBar;
 
-/**
- * This is the welcome page.
- *
- * This is the first page the user sees.
- */
-class WelcomePage extends Page
+class ChartPage extends Page
 {
 	/**
 	 * The menu bar.

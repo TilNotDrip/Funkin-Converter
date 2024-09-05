@@ -255,25 +255,24 @@ class DiscordRPC
 	// Handlers
 	static function onReady(request:cpp.RawConstPointer<DiscordUser>):Void
 	{
-		var userName:String = cast(request[0].username, String);
-		var userDiscrim:String = '';
+		var displayDiscrim:String = '';
 
 		if (Std.parseInt(cast(request[0].discriminator, String)) != 0)
-			userDiscrim += '#${cast (request[0].discriminator, String)}';
+			displayDiscrim += '#' + request[0].discriminator;
 
 		updatePresence();
 
-		trace('Discord RPC Successfully connected! ($userName$userDiscrim)');
+		trace('[INFO]: Discord RPC Successfully connected! Connected to ${request[0].globalName} (${request[0].username}$displayDiscrim)');
 	}
 
 	static function onDisconnected(errorCode:Int, message:cpp.ConstCharStar):Void
 	{
-		trace('Discord RPC Disconnected! ($errorCode: ${cast (message, String)})');
+		trace('[INFO]: Discord RPC Disconnected! $message ($errorCode)');
 	}
 
 	static function onError(errorCode:Int, message:cpp.ConstCharStar):Void
 	{
-		trace('Discord RPC Error! ($errorCode: ${cast (message, String)})');
+		trace('[ERROR]: Discord RPC Error! $message ($errorCode)');
 	}
 
 	// Setting Discord RPC Variables

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project>
-    <meta title="Funkin Converter" package="Funkin Converter" version="0.1.0" company="TilNotDrip" />
+<project xmlns="http://lime.openfl.org/project/1.0.4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
+
+    <meta title="Funkin Converter" package="com.tilnotdrip.funkinconverter" version="0.1.0" company="TilNotDrip" />
     <app main="Main" file="FunkinConverter" path="build/funkinconverter" />
 
-    <window background="#000000" fps="60" resizable="false" />
+    <window background="#000000" fps="60" resizable="true" />
     <window width="1280" height="720" if="desktop" />
     <window width="0" height="0" if="html5" />
 
     <!-- Assets / Paths -->
-
     <assets path="assets" embed="true" />
+
     <source path="src" />
 
     <!-- Funkin Converter Defines -->
@@ -19,6 +22,7 @@
     <haxelib name="actuate" />
     <haxelib name="haxeui-core" />
     <haxelib name="haxeui-openfl" />
+    <haxelib name="hxcpp-debug-server" if="debug" />
     <haxelib name="hxdiscord_rpc" if="FUNKIN_DISCORD_RPC" />
     <haxelib name="openfl" />
 
