@@ -4,6 +4,12 @@
 - [ ] Charts
 - [ ] Characters
 
+### Friday Night Funkin' (Legacy)
+- [ ] Charts
+
+### Friday Night Funkin' (Ludum Dare)
+- [ ] Charts
+
 ### Psych Engine
 - [ ] Characters
 
@@ -15,8 +21,8 @@
 
 ### CDEV Engine
 
-### Chillin' Engine
-- [ ] Charts (10%)
+### TechNotDrip Engine
+- [ ] Charts
 - [ ] Characters
 
 ## Options
