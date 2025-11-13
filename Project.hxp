@@ -1,0 +1,58 @@
+package;
+
+import hxp.Haxelib;
+import lime.tools.HXProject;
+
+class Project extends HXProject
+{
+    public function new()
+    {
+        super();
+
+        setenv('HAXEPATH', './');
+
+        setupApplication();
+        setupPaths();
+        setupHaxelibs();
+    }
+
+    public function setupApplication():Void
+    {
+        meta.title = 'Funkin\' Converter';
+        meta.version = '0.1.0';
+        meta.packageName = 'org.tilnotdrip.funkinconverter';
+        meta.company = 'TilNotDrip';
+        meta.companyUrl = 'https://tilnotdrip.org/';
+
+        app.file = 'FunkinConverter';
+        app.main = 'Main';
+        app.path = 'export/${(debug) ? 'debug' : 'release'}';
+
+        window.width = 1280;
+        window.height = 720;
+    }
+
+    public function setupPaths():Void
+    {
+        sources.push('src');
+    }
+
+    public function setupHaxelibs():Void
+    {
+        addHaxelib('lime', '8.3.0');
+        addHaxelib('openfl', '9.5.0');
+        addHaxelib('haxeui-core', '1.7.0');
+        addHaxelib('haxeui-openfl', '1.7.0');
+        addHaxelib('hxcpp-debug-server', '1.2.4', debug);
+    }
+
+    public function addHaxelib(name:String, version:String = '', conditions:Bool = true):Void
+	{
+		if (!conditions)
+		{
+			return;
+		}
+
+		haxelibs.push(new Haxelib(name, version));
+	}
+}

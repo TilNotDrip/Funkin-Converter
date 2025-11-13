@@ -1,0 +1,14 @@
+.DS_STORE
+
+.haxelib/*
+.haxelsp/*
+.vs/*
+.vscode/*
+
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+dump/*
+export/*
