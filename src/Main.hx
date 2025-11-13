@@ -6,7 +6,7 @@ class Main
 {
 	public static function main():Void
 	{
-		var app = new HaxeUIApp();
+		var app:HaxeUIApp = new HaxeUIApp();
 		app.ready(() ->
 		{
 			app.start();
