@@ -1,52 +1,89 @@
 package;
 
-import hxp.Haxelib;
-import lime.tools.HXProject;
+import hxp.*;
+import lime.tools.*;
+import sys.FileSystem;
 
 class Project extends HXProject
 {
-    public function new()
-    {
-        super();
+	public function new()
+	{
+		super();
 
-        setenv('HAXEPATH', './');
+		setenv('HAXEPATH', './');
 
-        setupApplication();
-        setupPaths();
-        setupHaxelibs();
-    }
+		setupApplication();
+		setupPaths();
+		setupHaxelibs();
+	}
 
-    public function setupApplication():Void
-    {
-        meta.title = 'Funkin\' Converter';
-        meta.version = '0.1.0';
-        meta.packageName = 'org.tilnotdrip.funkinconverter';
-        meta.company = 'TilNotDrip';
-        meta.companyUrl = 'https://tilnotdrip.org/';
+	public function setupApplication():Void
+	{
+		meta.title = 'Funkin\' Converter';
+		meta.version = '0.1.0';
+		meta.packageName = 'org.tilnotdrip.funkinconverter';
+		meta.company = 'TilNotDrip';
+		meta.companyUrl = 'https://tilnotdrip.org/';
 
-        app.file = 'FunkinConverter';
-        app.main = 'Main';
-        app.path = 'export/${(debug) ? 'debug' : 'release'}';
+		app.file = 'FunkinConverter';
+		app.main = 'Main';
+		app.path = 'export/${(debug) ? 'debug' : 'release'}';
 
-        window.width = 1280;
-        window.height = 720;
-    }
+		window.width = 1280;
+		window.height = 720;
+	}
 
-    public function setupPaths():Void
-    {
-        sources.push('src');
-    }
+	public function setupPaths():Void
+	{
+		addAssetPath('assets', ['exclude']);
 
-    public function setupHaxelibs():Void
-    {
-        addHaxelib('lime', '8.3.0');
-        addHaxelib('openfl', '9.5.0');
-        addHaxelib('haxeui-core', '1.7.0');
-        addHaxelib('haxeui-openfl', '1.7.0');
-        addHaxelib('hxcpp-debug-server', 'git', debug);
-    }
+		sources.push('src');
+	}
 
-    public function addHaxelib(name:String, version:String = '', conditions:Bool = true):Void
+	public function setupHaxelibs():Void
+	{
+		addHaxelib('lime', '8.3.0');
+		addHaxelib('openfl', '9.5.0');
+		addHaxelib('haxeui-core', '1.7.0');
+		addHaxelib('haxeui-openfl', '1.7.0');
+		addHaxelib('hxcpp-debug-server', 'git', debug);
+	}
+
+	public function addAssetPath(path:String, exclude:Array<String>):Void
+	{
+		if (!FileSystem.exists(path))
+		{
+			Log.error('Could not find asset path "${path}".');
+		}
+		else if (!FileSystem.isDirectory(path))
+		{
+			Log.error('Could not parse asset path "${path}", expected a directory.');
+		}
+
+		for (file in FileSystem.readDirectory(path))
+		{
+			if (!this.filter(file, ["*"], exclude))
+			{
+				continue;
+			}
+
+			if (FileSystem.isDirectory('${path}/${file}'))
+			{
+				addAssetPath('${path}/${file}', exclude);
+			}
+			else
+			{
+				addAsset('${path}/${file}');
+			}
+		}
+	}
+
+	public function addAsset(path:String):Void
+	{
+		assets.push(new Asset(path, path, null, true, true));
+	}
+
+	public function addHaxelib(name:String, version:String = '', conditions:Bool = true):Void
 	{
 		if (!conditions)
 		{

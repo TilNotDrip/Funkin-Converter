@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menubar id="menubar" width="100%">
+    <menu text="File" />
+</menubar>
