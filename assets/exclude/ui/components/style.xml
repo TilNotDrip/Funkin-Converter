@@ -1,0 +1,23 @@
+<box width="0" height="0" padding="0" x="-9999" y="-9999"> <!-- I don't want to have this box here but it prevents errors. -->
+	<style>
+		body, .label, .link {
+			font-size: 14px;
+			font-family: 'Inconsolata';
+			font-bold: true;
+		}
+		.button, .menu, .menuitem, .menuLabel, .menuitem-checkbox {
+			font-size: 12px;
+			font-family: 'Inconsolata';
+			font-bold: true;
+		}
+		.menuHeader {
+			font-size: 16px;
+			font-family: 'Inconsolata';
+			font-bold: true;
+		}
+		.textfield {
+			font-size: 10px;
+			font-bold: true;
+		}
+	</style>
+</box>
