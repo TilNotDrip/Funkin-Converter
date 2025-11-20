@@ -1,6 +1,7 @@
 package;
 
 import funkin.converter.ui.MainView;
+import funkin.converter.ui.dialogs.WelcomeDialog;
 import haxe.ui.HaxeUIApp;
 import haxe.ui.Toolkit;
 import lime.app.Application;
@@ -25,7 +26,10 @@ class Main extends Sprite
 			var currentWindow:Window = Application.current.window;
 			currentWindow.frameRate = currentWindow.displayMode.refreshRate;
 
-			app.addComponent(new MainView());
+			var mainView:MainView = new MainView();
+			mainView.addComponent(new WelcomeDialog());
+			app.addComponent(mainView);
+
 			app.start();
 		});
 	}
