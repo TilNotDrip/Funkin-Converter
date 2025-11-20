@@ -10,10 +10,14 @@ import openfl.display.Sprite;
 
 class Main extends Sprite
 {
-	var app:HaxeUIApp;
+	public static var instance:Main = null;
+
+	public var app:HaxeUIApp = null;
 
 	public function new()
 	{
+		instance = this;
+
 		super();
 
 		app = new HaxeUIApp();

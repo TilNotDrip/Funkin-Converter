@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menubar id="menubar" width="100%">
-    <menu text="File" />
+    <style>
+        .menu {
+            width: 160px;
+        }
+    </style>
+    <menu text="File">
+        <menuitem id="menubarFileExit" text="Exit" shortcutText="Alt+F4" />
+    </menu>
 </menubar>
