@@ -1,0 +1,41 @@
+{
+  "dependencies": [
+    {
+      "name": "haxeui-core",
+      "type": "haxelib",
+      "version": "1.7.0"
+    },
+    {
+      "name": "haxeui-openfl",
+      "type": "haxelib",
+      "version": "1.7.0"
+    },
+    {
+      "name": "hxcpp",
+      "type": "haxelib",
+      "version": "4.3.2"
+    },
+    {
+      "name": "hxcpp-debug-server",
+      "type": "git",
+      "dir": null,
+      "ref": "93a8027e4f930cf6c4f49c5ad98e56979ca31795",
+      "url": "https://github.com/vshaxe/hxcpp-debugger"
+    },
+    {
+      "name": "hxp",
+      "type": "haxelib",
+      "version": "1.3.1"
+    },
+    {
+      "name": "lime",
+      "type": "haxelib",
+      "version": "8.3.0"
+    },
+    {
+      "name": "openfl",
+      "type": "haxelib",
+      "version": "9.5.0"
+    }
+  ]
+}
