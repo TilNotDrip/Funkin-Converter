@@ -1,5 +1,6 @@
 package;
 
+import funkin.converter.modding.PolymodHandler;
 import funkin.converter.ui.MainView;
 import funkin.converter.ui.dialogs.WelcomeDialog;
 import haxe.ui.HaxeUIApp;
@@ -23,6 +24,8 @@ class Main extends Sprite
 		app = new HaxeUIApp();
 		app.ready(() ->
 		{
+			PolymodHandler.initialize();
+
 			Toolkit.init();
 			Toolkit.theme = 'dark';
 

@@ -15,6 +15,7 @@ class Project extends HXProject
 		setupApplication();
 		setupPaths();
 		setupHaxelibs();
+		setupHaxeDefines();
 	}
 
 	public function setupApplication():Void
@@ -47,6 +48,17 @@ class Project extends HXProject
 		addHaxelib('haxeui-core', '1.7.0');
 		addHaxelib('haxeui-openfl', '1.7.0');
 		addHaxelib('hxcpp-debug-server', 'git', debug);
+		addHaxelib('polymod', 'git');
+	}
+
+	public function setupHaxeDefines():Void
+	{
+		addHaxedef('hscriptPos', true);
+		addHaxedef('message.reporting', 'pretty');
+		addHaxedef('POLYMOD_DEBUG', debug);
+		addHaxedef("POLYMOD_MOD_ICON_FILE", "_polymod_icon.png");
+		addHaxedef("POLYMOD_MOD_METADATA_FILE", "_polymod_meta.json");
+		addHaxedef("POLYMOD_ROOT_PATH", "scripts/");
 	}
 
 	public function addAssetPath(path:String, exclude:Array<String>):Void
@@ -91,5 +103,15 @@ class Project extends HXProject
 		}
 
 		haxelibs.push(new Haxelib(name, version));
+	}
+
+	public function addHaxedef(name:String, value:Dynamic, conditions:Bool = true):Void
+	{
+		if (!conditions)
+		{
+			return;
+		}
+
+		haxedefs.set(name, value);
 	}
 }
