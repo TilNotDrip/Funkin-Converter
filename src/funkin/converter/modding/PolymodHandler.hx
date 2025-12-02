@@ -16,8 +16,6 @@ class PolymodHandler
 
 	public static function initialize():Void
 	{
-		trace(SCAN_DIRECTORY);
-
 		#if sys
 		if (!FileSystem.exists(SCAN_DIRECTORY))
 		{
