@@ -21,18 +21,18 @@ class Main extends Sprite
 
 		super();
 
+		PolymodHandler.initialize();
+
+		Toolkit.init();
+		Toolkit.theme = 'dark';
+
+		// OpenFL by default is about 30 fps so we will just match it to the user's refresh rate.
+		var currentWindow:Window = Application.current.window;
+		currentWindow.frameRate = currentWindow.displayMode.refreshRate;
+
 		app = new HaxeUIApp();
 		app.ready(() ->
 		{
-			PolymodHandler.initialize();
-
-			Toolkit.init();
-			Toolkit.theme = 'dark';
-
-			// OpenFL by default is about 30 fps so we will just match it to the user's refresh rate.
-			var currentWindow:Window = Application.current.window;
-			currentWindow.frameRate = currentWindow.displayMode.refreshRate;
-
 			var mainView:MainView = new MainView();
 			mainView.addComponent(new WelcomeDialog());
 			app.addComponent(mainView);

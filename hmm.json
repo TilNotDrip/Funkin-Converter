@@ -11,6 +11,13 @@
       "version": "1.7.0"
     },
     {
+      "name": "hscript",
+      "type": "git",
+      "dir": null,
+      "ref": "8c1d238b069ef97cec13f5121b29d2afe2b8985d",
+      "url": "https://github.com/FunkinCrew/hscript"
+    },
+    {
       "name": "hxcpp",
       "type": "haxelib",
       "version": "4.3.2"
@@ -64,6 +71,13 @@
       "dir": null,
       "ref": "2bf2b992e06159510f595554e6b952e47922f128",
       "url": "https://github.com/fponticelli/thx.core"
+    },
+    {
+      "name": "thx.semver",
+      "type": "git",
+      "dir": null,
+      "ref": "bdb191fe7cf745c02a980749906dbf22719e200b",
+      "url": "https://github.com/fponticelli/thx.semver"
     }
   ]
 }

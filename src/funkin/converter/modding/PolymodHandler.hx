@@ -48,6 +48,7 @@ class PolymodHandler
 	{
 		var parseRules:ParseRules = ParseRules.getDefault();
 		parseRules.addType('hxc', PLAINTEXT);
+		parseRules.addType('hxs', PLAINTEXT);
 		return parseRules;
 	}
 
