@@ -1,4 +1,4 @@
-package funkin.converter.utils;
+package funkin.converter.util;
 
 import lime._internal.backend.native.NativeCFFI;
 import lime.system.CFFI;

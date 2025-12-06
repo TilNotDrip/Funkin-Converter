@@ -1,6 +1,6 @@
 package funkin.converter.modding;
 
-import funkin.converter.utils.System;
+import funkin.converter.util.System;
 import haxe.io.Path;
 import polymod.Polymod;
 import polymod.format.ParseRules;
