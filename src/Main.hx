@@ -1,13 +1,17 @@
 package;
 
+import funkin.converter.Asset;
+import funkin.converter.formats.Engine;
 import funkin.converter.modding.PolymodHandler;
 import funkin.converter.ui.MainView;
 import funkin.converter.ui.dialogs.WelcomeDialog;
+import haxe.io.Path;
 import haxe.ui.HaxeUIApp;
 import haxe.ui.Toolkit;
 import lime.app.Application;
 import lime.ui.Window;
 import openfl.display.Sprite;
+import polymod.Polymod;
 
 class Main extends Sprite
 {
@@ -22,6 +26,9 @@ class Main extends Sprite
 		super();
 
 		PolymodHandler.initialize();
+		registerModdedAssets();
+
+		Engine.registerEngines();
 
 		Toolkit.init();
 		Toolkit.theme = 'dark';
@@ -39,5 +46,14 @@ class Main extends Sprite
 
 			app.start();
 		});
+	}
+
+	private function registerModdedAssets():Void
+	{
+		@:privateAccess
+		for (moddedAsset in Polymod.listModFiles())
+		{
+			Asset._moddedAssets.push(Path.join(['assets', moddedAsset]));
+		}
 	}
 }
