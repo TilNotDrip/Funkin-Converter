@@ -25,7 +25,7 @@
     {
       "name": "hxcpp-debug-server",
       "type": "git",
-      "dir": null,
+      "dir": "hxcpp-debug-server",
       "ref": "93a8027e4f930cf6c4f49c5ad98e56979ca31795",
       "url": "https://github.com/vshaxe/hxcpp-debugger"
     },
