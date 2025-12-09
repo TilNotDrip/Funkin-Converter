@@ -8,4 +8,7 @@
     <menu text="File">
         <menuitem id="menubarFileExit" text="Exit" shortcutText="Alt+F4" />
     </menu>
+    <menu text="Audio">
+        <menu-checkbox id="menubarAudioBackgroundMusic" text="Background Music" selected="true" />
+    </menu>
 </menubar>
