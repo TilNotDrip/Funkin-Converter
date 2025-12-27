@@ -44,7 +44,7 @@ class Project extends HXProject
 
 	public function setupHaxelibs():Void
 	{
-		addHaxelib('lime', '8.3.0');
+		addHaxelib('lime', 'git');
 		addHaxelib('openfl', '9.5.0');
 		addHaxelib('haxeui-core', '1.7.0');
 		addHaxelib('haxeui-openfl', '1.7.0');
@@ -105,7 +105,7 @@ class Project extends HXProject
 
 	public function addAsset(path:String):Void
 	{
-		assets.push(new Asset(path, path, null, false, true));
+		assets.push(new Asset(path, path, null, true, true));
 	}
 
 	public function addHaxelib(name:String, version:String = '', conditions:Bool = true):Void

@@ -50,8 +50,10 @@
     },
     {
       "name": "lime",
-      "type": "haxelib",
-      "version": "8.3.0"
+      "type": "git",
+      "dir": null,
+      "ref": "2e856bd247fba91e13059d3d37e363ed1f6b817e",
+      "url": "https://github.com/player-03/lime"
     },
     {
       "name": "openfl",
