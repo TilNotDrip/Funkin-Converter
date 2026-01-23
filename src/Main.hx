@@ -14,14 +14,17 @@ import lime.ui.Window;
 import openfl.display.Sprite;
 import polymod.Polymod;
 
+@:nullSafety
 class Main extends Sprite
 {
-	public static var instance:Main = null;
+	public static var instance:Null<Main>;
 
-	public var app:HaxeUIApp = null;
+	public var app:HaxeUIApp;
 
 	public function new()
 	{
+		app = new HaxeUIApp();
+
 		instance = this;
 
 		super();
@@ -40,7 +43,6 @@ class Main extends Sprite
 		var currentWindow:Window = Application.current.window;
 		currentWindow.frameRate = currentWindow.displayMode.refreshRate;
 
-		app = new HaxeUIApp();
 		app.ready(() ->
 		{
 			var mainView:MainView = new MainView();

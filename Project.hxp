@@ -33,6 +33,7 @@ class Project extends HXProject
 
 		window.width = 1280;
 		window.height = 720;
+		window.allowHighDPI = true;
 	}
 
 	public function setupPaths():Void
