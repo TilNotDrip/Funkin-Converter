@@ -2,7 +2,6 @@ package funkin.converter.formats;
 
 import haxe.Json;
 import haxe.io.Path;
-import polymod.hscript.HScriptedClass;
 
 @:nullSafety
 class Engine

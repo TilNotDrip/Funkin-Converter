@@ -54,6 +54,6 @@ class PolymodHandler
 
 	static function get_SCAN_DIRECTORY():String
 	{
-		return Path.normalize(Path.join([System.getSaveDirectory(), 'CustomConverters']));
+		return Path.normalize(Path.join([System.getDataDirectory(), 'CustomConverters']));
 	}
 }
