@@ -5,6 +5,7 @@ import funkin.converter.formats.Engine;
 import funkin.converter.modding.PolymodHandler;
 import funkin.converter.ui.MainView;
 import funkin.converter.ui.dialogs.WelcomeDialog;
+import funkin.converter.util.native.Native;
 import haxe.io.Path;
 import haxe.ui.HaxeUIApp;
 import haxe.ui.Toolkit;
@@ -24,6 +25,8 @@ class Main extends Sprite
 		instance = this;
 
 		super();
+
+		Native.setDPIAware();
 
 		PolymodHandler.initialize();
 		registerModdedAssets();
