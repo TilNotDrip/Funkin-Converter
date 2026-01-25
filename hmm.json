@@ -11,13 +11,6 @@
       "version": "1.7.0"
     },
     {
-      "name": "hscript",
-      "type": "git",
-      "dir": null,
-      "ref": "8c1d238b069ef97cec13f5121b29d2afe2b8985d",
-      "url": "https://github.com/FunkinCrew/hscript"
-    },
-    {
       "name": "hxcpp",
       "type": "haxelib",
       "version": "4.3.2"
@@ -64,7 +57,7 @@
       "name": "polymod",
       "type": "git",
       "dir": null,
-      "ref": "d88daa6a0944ddb85d672191d14daea708e55a2c",
+      "ref": "9d74fe1543fdf835f909b1e3f58a8f2d5b3dd251",
       "url": "https://github.com/larsiusprime/polymod"
     },
     {
