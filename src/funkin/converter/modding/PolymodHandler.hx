@@ -28,28 +28,19 @@ class PolymodHandler
 			framework: OPENFL,
 			dirs: getAllDirs(),
 			apiVersionRule: API_VERSION_RULE,
-			parseRules: getParseRules(),
-			useScriptedClasses: true
+			parseRules: ParseRules.getDefault(),
+			useScriptedClasses: true,
+			errorCallback: error -> {} // TODO
 		});
+
+		// TODO: make this async
+		Polymod.registerAllScriptClasses();
 	}
 
 	private static function getAllDirs():Array<String>
 	{
-		var dirsToReturn:Array<String> = [];
-		for (customConverter in Polymod.scan({modRoot: SCAN_DIRECTORY, apiVersionRule: API_VERSION_RULE}))
-		{
-			dirsToReturn.push(customConverter.id);
-		}
-
-		return dirsToReturn;
-	}
-
-	private static function getParseRules():ParseRules
-	{
-		var parseRules:ParseRules = ParseRules.getDefault();
-		parseRules.addType('hxc', PLAINTEXT);
-		parseRules.addType('hxs', PLAINTEXT);
-		return parseRules;
+		final metadatas:Array<ModMetadata> = Polymod.scan({modRoot: SCAN_DIRECTORY, apiVersionRule: API_VERSION_RULE});
+		return metadatas.map(metadata -> metadata.dirName);
 	}
 
 	static function get_SCAN_DIRECTORY():String

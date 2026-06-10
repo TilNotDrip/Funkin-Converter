@@ -1,18 +1,15 @@
 package;
 
-import funkin.converter.Asset;
-import funkin.converter.formats.Engine;
+import funkin.converter.format.FormatRegistry;
 import funkin.converter.modding.PolymodHandler;
 import funkin.converter.ui.MainView;
 import funkin.converter.ui.dialogs.WelcomeDialog;
 import funkin.converter.util.native.Native;
-import haxe.io.Path;
 import haxe.ui.HaxeUIApp;
 import haxe.ui.Toolkit;
 import lime.app.Application;
 import lime.ui.Window;
 import openfl.display.Sprite;
-import polymod.Polymod;
 
 @:nullSafety
 class Main extends Sprite
@@ -32,12 +29,10 @@ class Main extends Sprite
 		Native.setDPIAware();
 
 		PolymodHandler.initialize();
-		registerModdedAssets();
-
-		Engine.registerEngines();
+		FormatRegistry.instance.loadEntries();
 
 		Toolkit.init();
-		Toolkit.theme = 'dark';
+		Toolkit.theme = 'funkin-dark';
 
 		// OpenFL by default is about 30 fps so we will just match it to the user's refresh rate.
 		var currentWindow:Window = Application.current.window;
@@ -51,14 +46,5 @@ class Main extends Sprite
 
 			app.start();
 		});
-	}
-
-	private function registerModdedAssets():Void
-	{
-		@:privateAccess
-		for (moddedAsset in Polymod.listModFiles())
-		{
-			Asset._moddedAssets.push(Path.join(['assets', moddedAsset]));
-		}
 	}
 }

@@ -2,5 +2,4 @@
 <box width="100%" height="100%">
 	<image id="bg" resource="assets/images/menuBG.png" width="100%" height="100%" scaleMode="fitoutside" style="filter: tint(#673AB7);" />
 	<import source="components/menubar.xml" />
-	<import source="components/style.xml" />
 </box>

@@ -1,18 +1,33 @@
 {
   "dependencies": [
     {
+      "name": "compiletime",
+      "type": "haxelib",
+      "dir": null,
+      "version": "2.8.0"
+    },
+    {
+      "name": "format",
+      "type": "haxelib",
+      "dir": null,
+      "version": "3.8.0"
+    },
+    {
       "name": "haxeui-core",
       "type": "haxelib",
+      "dir": null,
       "version": "1.7.0"
     },
     {
       "name": "haxeui-openfl",
       "type": "haxelib",
+      "dir": null,
       "version": "1.7.0"
     },
     {
       "name": "hxcpp",
       "type": "haxelib",
+      "dir": null,
       "version": "4.3.2"
     },
     {
@@ -25,6 +40,7 @@
     {
       "name": "hxp",
       "type": "haxelib",
+      "dir": null,
       "version": "1.3.1"
     },
     {
@@ -51,14 +67,15 @@
     {
       "name": "openfl",
       "type": "haxelib",
+      "dir": null,
       "version": "9.5.0"
     },
     {
       "name": "polymod",
       "type": "git",
       "dir": null,
-      "ref": "3f511487c36e6ef8bdcef90edee08b83e9880d23",
-      "url": "https://github.com/larsiusprime/polymod"
+      "ref": "574c152100a3509649f917a4a138bbb0c0979380",
+      "url": "https://github.com/FunkinCrew/polymod"
     },
     {
       "name": "thx.core",

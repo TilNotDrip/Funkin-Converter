@@ -2,12 +2,8 @@ package funkin.converter.ui;
 
 import haxe.ui.containers.Box;
 import haxe.ui.events.MouseEvent;
-import lime.app.Promise;
-import lime.utils.Assets as LimeAssets;
-import openfl.Lib;
 import openfl.media.Sound;
 import openfl.media.SoundChannel;
-import openfl.utils.Assets;
 
 @:build(haxe.ui.ComponentBuilder.build("assets/exclude/ui/main-view.xml"))
 // @:nullSafety // TODO: uncomment this once HaxeUI has null-safety.

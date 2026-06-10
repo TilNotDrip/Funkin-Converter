@@ -1,7 +1,8 @@
 package funkin.converter;
 
 #if !macro
-import funkin.converter.Asset as FunkinAsset;
+import funkin.converter.util.SortUtil;
+import openfl.Lib;
 import openfl.utils.Assets;
 
 using Lambda;

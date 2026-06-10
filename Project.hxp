@@ -71,7 +71,8 @@ class Project extends HXProject
 	public function setupHaxeFlags():Void
 	{
 		addHaxeFlag('-dce no');
-		addHaxeFlag('--macro include(\'flixel.util\')'); // https://github.com/larsiusprime/polymod/issues/267
+		addHaxeMacro("include('funkin.converter', true)");
+
 	}
 
 	public function addAssetPath(path:String, exclude:Array<String>):Void
@@ -131,4 +132,9 @@ class Project extends HXProject
 			haxeflags.push(flag);
 		}
 	}
+
+  public function addHaxeMacro(value:String, conditions:Bool = true):Void
+  {
+    addHaxeFlag('--macro ${value}', conditions);
+  }
 }
